@@ -24,6 +24,6 @@
   },
 
   "forwardPorts": [3000, 5432],
-  // "postCreateCommand": "cd backend && npm install",
+  "postCreateCommand": "cd backend && npm install",
   "remoteUser": "node"
 }
