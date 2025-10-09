@@ -1,0 +1,14 @@
+FROM node:20-bullseye
+
+# Install additional tools useful for development
+RUN apt-get update && apt-get install -y \
+    git \
+    postgresql-client \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create workspace
+WORKDIR /workspace
+
+# Switch to node user for security
+USER node
