@@ -3,7 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,8 +22,8 @@
       }
     }
   },
-  
+
   "forwardPorts": [3000, 5432],
-  "postCreateCommand": "cd backend && npm install",
+  // "postCreateCommand": "cd backend && npm install",
   "remoteUser": "node"
 }
