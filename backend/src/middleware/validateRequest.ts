@@ -3,7 +3,7 @@ import { ValidationError } from "../utils/errors";
 
 export const validateCreateFlight = (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): void => {
   const {

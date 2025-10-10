@@ -6,7 +6,7 @@ const router = Router();
 router.use("/flights", flightRoutes);
 
 // Health check endpoint
-router.get("/health", (req, res) => {
+router.get("/health", (_req, res) => {
   res.json({
     success: true,
     message: "Flight Logbook API is running",

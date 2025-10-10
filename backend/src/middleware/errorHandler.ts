@@ -2,11 +2,12 @@ import { Request, Response, NextFunction } from "express";
 import { AppError } from "../utils/errors";
 import { config } from "../config";
 
+// unused variables are prefixed as this is an error handling middleware
 export const errorHandler = (
   err: Error | AppError,
-  req: Request,
+  _req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ): void => {
   if (err instanceof AppError) {
     res.status(err.statusCode).json({
