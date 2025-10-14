@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { flightApi } from "../../services/api";
 import type { Flight } from "../../types";
 import FlightRow from "./FlightRow";
@@ -10,6 +11,7 @@ function getErrorMessage(error: unknown): string {
 }
 
 export default function FlightList() {
+  const navigate = useNavigate();
   const [flights, setFlights] = useState<Flight[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,9 +35,7 @@ export default function FlightList() {
   }, []);
 
   const handleEdit = (id: string) => {
-    // We'll implement this with routing later
-    console.log("Edit flight:", id);
-    alert(`Edit flight ${id} - will implement with routing`);
+    navigate(`/flights/edit/${id}`);
   };
 
   const handleDelete = async (id: string) => {
