@@ -4,8 +4,14 @@ module.exports = {
   roots: ["<rootDir>/tests", "<rootDir>/src"],
   testMatch: ["**/__tests__/**/*.ts", "**/?(*.)+(spec|test).ts"],
   transform: {
-    "^.+\\.ts$": "ts-jest",
+    "^.+\\.ts$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.test.json",
+      },
+    ],
   },
+  setupFilesAfterEnv: ["<rootDir>/tests/setup.ts"],
   collectCoverageFrom: [
     "src/**/*.ts",
     "!src/index.ts",
@@ -17,4 +23,5 @@ module.exports = {
   moduleFileExtensions: ["ts", "js", "json"],
   verbose: true,
   testTimeout: 10000,
+  modulePathIgnorePatterns: ["<rootDir>/dist/"],
 };
