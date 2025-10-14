@@ -11,7 +11,8 @@
         "esbenp.prettier-vscode",
         "ms-azuretools.vscode-docker",
         "cweijan.vscode-postgresql-client2",
-        "firsttris.vscode-jest-runner"
+        "firsttris.vscode-jest-runner",
+        "bradlc.vscode-tailwindcss"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -23,7 +24,22 @@
     }
   },
 
-  "forwardPorts": [3000, 5432],
-  "postCreateCommand": "cd backend && npm install",
+  "forwardPorts": [3000, 5173, 5432],
+  "portsAttributes": {
+    "3000": {
+      "label": "Backend API",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Frontend (Vite)",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+
+  "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install",
   "remoteUser": "node"
 }
