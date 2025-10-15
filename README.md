@@ -70,3 +70,8 @@ docker-compose down
 
 ***
 
+## Notes
+- Designed for local development/testing - not production-ready
+- Uses `localhost` for API calls (works for single-machine demos)
+
+
