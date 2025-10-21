@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS flight_totals (
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create indexes for better query performance
+
 CREATE INDEX IF NOT EXISTS idx_flights_user_id ON flights(user_id);
 CREATE INDEX IF NOT EXISTS idx_flights_date ON flights(date);
 
